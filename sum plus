@@ -1,0 +1,15 @@
+#include<stdio.h>
+int sumab (int x,int y);                 /*函数声明*/
+int main()                               /*主函数*/
+{int a,b,sum;                            /*定义变量*/
+  printf("请输入变量a与b的值:");          /*提示信息*/
+  scanf("%d %d", &a,&b);                 /*输入变量a和b的值*/
+  sum=sumab(a,b);                        /*调用sumab函数*/
+  printf("a与b的和等于%d",sum);           /*输出sumab的值*/
+  return 0;
+}
+int sumab (int x,int y)                   /*定义sumab函数，并定义形参x、y*/
+{int z;
+  z=x+y;
+  return z;
+}
