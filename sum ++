@@ -1,0 +1,23 @@
+#include<stdio.h>
+int sumab(int x, int y);
+int sumpy(int x, int y);
+int main()
+{   int a, b, suma,sumb;
+	printf("请输入变量a与b的值：");
+	scanf("%d %d", &a, &b);
+	suma = sumab(a, b);
+	sumb = sumpy(a, b);
+	printf("a与b的和等于%d\n", suma);
+	printf("a与b的差等于%d", sumb);
+	return 0;
+}
+int sumab(int x, int y)
+{int c;
+ c = x + y;
+ return c;
+}
+int sumpy(int x, int y)
+{int d;
+ d = x - y;
+ return d;
+}
