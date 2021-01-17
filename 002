@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{int a=200,b=100,c;
+    c=a+b+15;
+    printf("%d,%d,%d,%d\n",a,b,c,a-b-70);
+    printf("%o,%o,%o,%o\n",a,b,c,a-b-70);
+    printf("%x,%x,%x,%x\n",a,b,c,a-b-70);
+    return 0;
+}
