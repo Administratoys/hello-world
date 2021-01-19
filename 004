@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{int i,j,k; i=6;
+    j=++i;/*表达式++i的值是7*/
+    k=i++;/*表达式i++的值是7*/
+    printf("%d,%d,%d\n",j,k,i);
+    i=-6;
+    j=--i;/*表达式--i的值是-7*/
+    k=i--;/*表达式i--的值是-7*/
+    printf("%d,%d,%d\n",j,k,i);
+    return 0;
+}
