@@ -1,0 +1,7 @@
+#include<stdio.h>
+int main()
+{
+    printf("The computer is our good friends!\n");
+    printf("We learn C language.");
+    return 0;
+}
