@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main()
+{int m,n,i,j,k=5;
+    i=(j=6,j++,k+j);
+    printf("%d,%d\n",(n=3*4,m=n+5),i);
+    printf("%d,%d,%d,%d\n",n,m,j,(n,m,j));
+    return 0;
+}
