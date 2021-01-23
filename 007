@@ -1,0 +1,8 @@
+#include<stdio.h>
+main()
+{short a;
+    unsigned short b=65535;
+    a=b;
+    printf("%d,%d",a,b);
+    return 0;
+}
