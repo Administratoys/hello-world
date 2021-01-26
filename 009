@@ -1,0 +1,6 @@
+#include<stdio.h>
+main()
+{float f=3.1415927;
+printf("%f,%e\n",f,f);
+return 0;
+}
