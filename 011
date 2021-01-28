@@ -1,0 +1,8 @@
+#include<stdio.h>
+main()
+{long int a=123,b=456,c,d;
+    c=--b;
+    d=(a--,a+c);
+    printf("%ld,%ld,%ld,%ld"a,b,c,d);
+return 0;
+}
