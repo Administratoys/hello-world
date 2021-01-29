@@ -1,0 +1,6 @@
+#include<stdio.h>
+int main()
+{int k=65;
+    printf("k=%d,k=%0x,k=%c\n",k,k,k);
+    return 0;
+}
