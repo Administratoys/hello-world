@@ -1,0 +1,8 @@
+ #include<stdio.h>
+ int main()
+ {int integer1,integer2;float sum1,sum2,sum;
+    char c='A';integer1=65;integer2=-3;sum1=234.5;sum2=18.75;sum=sum1+sum2;
+    printf("%d %c %d %o %f\n",integer1,integer1,integer2,integer2,sum);
+    printf("%c %d %s",c,c,"good!");
+    return 0;
+ }
