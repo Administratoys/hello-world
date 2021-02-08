@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{char ch;
+ printf("Input Y/N(y/n):");
+ scanf("%c",&ch);
+ switch(ch)
+ {case  'y' ：
+  case  'Y' ：  printf("this is 'Y' or 'y'\n"); break;
+  case  'n' ：
+  case  'N' ：  printf("this is 'N' or 'n'\n"); break;
+  default ： printf("this is other char.\n");
+ }
+ return 0;
+}
