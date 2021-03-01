@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{   int a,b,c;
+    int max(int,int);
+    printf("请输入第一个整数:");
+    scanf("%d",&a);
+    printf("请输入第二个函数:");
+    scanf("%d",&b);
+    c=max(a.b);
+    printf("整数%d和%d的最大值是:%d\n",a,b,c);
+    return 0;
+}
+int max(int x,int y)
+{   int z;
+    if(x>y)
+        z=x;
+    else
+        z=y;
+    return 0;
+}
