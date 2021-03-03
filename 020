@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{    char ch;
+    printf(“Input a character：”);
+    ch=getch();              /*输入一个字符，并赋给变量ch*/
+    printf(“\nThe character you input is：“);
+    putchar(ch);
+    return 0;
+}
