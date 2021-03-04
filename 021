@@ -1,0 +1,15 @@
+# include <stdio.h>
+ int main()
+{ float  score;  int  grade;
+  scanf("%f", &score);      /*输入0到100范围内的实数*/
+  grade =(int)(score/10);    /*将0到100范围内的实数转变成0到10之间的整数*/
+switch(grade) 
+    { case  10  :
+case  9  :  printf("A\n"); break；
+case  8  :  printf("B\n"); break；
+      case  7  :  printf("C\n"); break；
+      case  6  :  printf("D\n"); break；
+default  :  printf("E \n");
+     }
+  return 0;
+}
