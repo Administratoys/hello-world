@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main()
+{
+    printf("now updata every day");
+    
+    return 0;
+}
