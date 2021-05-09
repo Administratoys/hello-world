@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {char ch1='A',ch2,ch3;
     ch2=ch1+1;  ch3=ch2+1;
