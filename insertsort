@@ -1,0 +1,47 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#define NUM 5
+void input_number(int v[]);				//ÊäÈë
+void insertsort(int v[], int length);		//²åÈëÅÅÐò
+void output_number(int v[]);				//Êä³ö
+void input_number(int v[])
+{
+	for (int i = 0; i < NUM; i++)
+	{
+		printf("NUMBER.%d:", i + 1);		scanf("%d", &v[i]);
+	}
+}
+void insertsort(int v[], int length)
+{
+	int i, j;
+	for ( i = 1; i < length; i++)
+	{
+		int temp = v[i];
+		for ( j = i - 1; j >= 0; j--)		//×Ô¼õÖÐ£¬j>=0ÍË³öÑ­»·j=-1£»j>0ÍË³öÑ­»·j=0;
+		{
+			if (v[j]>temp)
+				v[j + 1] = v[j];
+			else
+				break;
+		}
+		v[j + 1] = temp;
+	}
+}
+void output_number(int v[])
+{
+	for (int i = 0; i < NUM; i++)
+	{
+		printf("%3d ",v[i]);
+	}
+}
+int main(void)
+{
+	int v[NUM] = { 0 };
+	input_number(v);
+	insertsort(v, 5);
+	output_number(v);
+	putchar('\n');
+	getchar();
+	getchar();
+	return 0;
+}
