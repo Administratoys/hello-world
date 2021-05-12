@@ -1,0 +1,265 @@
+【群主】摸鱼bot 2021/4/26 11:54:59
+
+
+【群主】摸鱼bot 2021/4/26 11:55:02
+
+
+【群主】摸鱼bot 2021/4/27 18:24:16
+
+
+【群主】摸鱼bot 2021/4/27 22:19:17
+
+
+【群主】摸鱼bot 2021/4/27 22:24:09
+
+
+【群主】摸鱼bot 2021/4/28 8:48:21
+
+
+【群主】摸鱼bot 2021/4/28 8:48:54
+
+
+【群主】摸鱼bot 2021/4/28 20:31:27
+
+
+【群主】摸鱼bot 2021/4/28 20:31:34
+
+
+【群主】摸鱼bot 2021/4/29 20:57:21
+
+
+【群主】摸鱼bot 2021/4/29 23:17:06
+
+
+【群主】摸鱼bot 2021/4/30 13:47:26
+
+
+【群主】摸鱼bot 2021/5/7 11:35:52
+
+
+【群主】摸鱼bot 2021/5/7 11:43:15
+
+
+【群主】摸鱼bot 2021/5/7 20:26:49
+
+
+【群主】摸鱼bot 2021/5/7 20:26:58
+
+
+【群主】摸鱼bot 2021/5/8 14:39:49
+ygo://deck?main=63941210'33093439'70095154*3'46659709*2'14558127*3'23893227*3'1142880*2'56364287*3'23434538*2'24299458*3'24224830*2'86686671'63995093*3'60600126*3'37630732'25311006*2'18144506'3659803*2'82428674'10045474&extra=87116928'79229522'41209827'69946549'11270236'84058253*2'75286621'10443957'58069384*2'46724542*2'22423493'60303245&side=27204311'82385847'23434538'48130397*2'86686671'23002292'5851097'14532163*3'20899496*2
+
+【群主】摸鱼bot 2021/5/10 11:54:44
+
+
+【群主】摸鱼bot 2021/5/11 8:30:49
+https://ygobbs.com/t/%E3%80%90%E4%B8%8A%E4%BD%8D%E5%8D%A1%E7%BB%84%E5%BD%95%E5%83%8F%E4%B8%8B%E8%BD%BD%E3%80%91yas%E7%AC%AC%E4%BA%94%E5%B1%8A%E9%A2%84%E9%80%89%E8%B5%9B%C2%B7%E4%B8%89%E6%9C%88%EF%BC%9A%E5%85%BD%E6%88%98%E5%A3%AB%E9%80%86%E8%A2%AD%EF%BC%81%E5%8D%81%E4%BA%8C%E5%85%BD%E4%B8%8E%E9%93%81%E5%85%BD%E8%80%80%E7%9C%BC%E8%A1%A8%E7%8E%B0%EF%BC%81/233841?u=1147954
+
+【群主】摸鱼bot 21:45:00
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+struct Person
+{
+	char name[40];
+	char phone[20];
+	struct Person *next;
+} ;
+
+void getInput(struct Person *person);
+void printPerson(struct Person *person);
+void addPerson(struct Person **contacts);
+void changPerson(struct Person *contacts);
+void delPerson(struct Person **contacts);
+struct Person *findPerson(struct Person *contacts);
+void displayContacts(struct Person *contacts);
+void releaseContacts(struct Person **contacts);
+
+void getInput(struct Person *person)
+{
+	printf("请输入姓名：");
+	scanf("%s",person->name);
+	printf("请输入电话：");
+	scanf("%s",person->phone);
+}
+
+void addPerson(struct Person **contacts)
+{
+	struct Person *person;
+	struct Person *temp;
+	
+	person = (struct Person *)malloc(sizeof(struct Person));
+	if(person ==NULL)
+	{
+		printf("内存分配失败！\n");
+		exit(1);
+	}
+	
+	getInput(person);
+	
+	//将person用头插法添加到通讯录中
+	if(*contacts != Null)
+	{
+		temp = *contacts;
+		*contacts = person;
+		person->next = temp;
+	} 
+	else
+	{
+		*contacts = person;
+		person->next = NULL;
+	}
+}
+
+void printPerson(struct Person *person)
+{
+	printf("联系人：%s\n",person->name);
+	printf("电话：%s\n",person->phone);
+}
+
+struct Person *findperson(struct Person *contacts)
+{
+	struct Person *current;
+	char input[40];
+	
+	printf("请输入联系人： ");
+	scanf("%s",input);
+	
+	current = contacts;
+	while (current !=NULL && strcmp(current->name,input))
+	{
+		current = current->next;
+	}
+	
+	return current;
+}
+
+void changPerson(struct Person *contacts)
+{
+	struct Person *person;
+	
+	person = findperson(contacts);
+	if(person == NULL)
+	{
+		printf("找不到该联系人！\n");
+	}
+	else
+	{
+		printf("请输入新的联系电话：");
+		scanf("%s",person->phone);
+	}
+}
+
+void delperson(struct Person **contacts)
+{
+	struct Person *person;
+	struct Person *current;
+	struct Person *previous;
+	
+	//先找到待删除的节点指针
+	person = findPerson(*contacts);
+	if(person ==NULL)
+	{
+		printf("找不到该联系人！\n");
+	} 
+	else
+	{
+		current = *contacts;
+		previous = NULL;
+		
+		//current 定位到待删除的节点
+		while (current !=NULL && current != person)
+		{
+			previous = current;
+			current = current->next;
+		} 
+		
+		if(previous == NULL)
+		{
+			//待删除的节点是第一个节点
+			*contacts = current->next; 
+		}
+		else
+		{
+			//待删除的节点不是第一个节点
+			previous->next = current->next 
+		}
+		
+		free(person):
+	}
+}
+
+void displayContacts(struct Person *contacts)
+{
+	struct Person *current;
+	
+	current = contacts;
+	while(current !=NULL)
+	{
+		printPerson(current);
+		current = current->next;
+	}
+}
+
+void releasecontacts(struct Person **contacts)
+{
+	struct Person *temp;
+	
+	while(*contacts !=NULL)
+	{
+		temp = *contacts;
+		*contacts = (*contacts)->next:
+		free(temp);
+	}
+}
+
+int main(void)
+{
+	int code;
+	struct Person *contacts =NULL;
+	struct Person *person;
+	
+	printf("|欢迎使用通讯录管理系统|\n");
+	printf("|---1：插入新的联系人---|\n");
+	printf("|---2：查找已有联系人---|\n");
+	printf("|---3：更改已有联系人---|\n");
+	printf("|---4：删除已有联系人---|\n");
+	printf("|---5：显示当前通讯录---|\n");
+	printf("|---6：退出通讯录程序---|\n");
+	printf("|- Powered by FishC.com -|\n");
+	
+	while(1)
+	{
+		printf("\n请输入命令代码：");
+		scanf("%d",&code);
+		switch(code)
+		{
+			case1:addPerson(&contacts);break;
+			
+			case2:person = findPerson(contacts);
+				if( person == NULL)
+				{
+					printf("找不到联系人！\n");
+				}
+				else
+				{
+					printPerson(person);
+				}
+				break;
+				
+			case3:changPerson(contacts);break;
+			
+			case4:delPerson(&contacts);break;
+			
+			case5:displayContacts(contacts);break;
+			
+			case6:goto END;
+		}
+	}
+END:
+	releasecontacts(&contacts);
+	
+	return 0;	
+}
+
