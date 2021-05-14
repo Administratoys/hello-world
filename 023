@@ -1,0 +1,6 @@
+struct tagPOINT1
+ {
+    int x;
+    int y; 
+};
+struct tagPOINT1 p1;
