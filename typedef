@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+typedef int integer;
+
+int main()
+{
+    integer a;
+    int b;
+
+    a = 520;
+    b = a;
+
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("sizeof a = %d\n", sizeof(a));
+
+    return 0;
+}
