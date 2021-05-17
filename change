@@ -1,0 +1,46 @@
+/*有一字符串，包含n个字符。写一函数，将此字符串中从第m个字符开始的全部字符复制成
+为另一个字符串*/
+
+#include <stdio.h>
+#include <string.h>
+#define N 5
+#define M 2
+
+int main()
+{
+	int fun(char c[],char a[]); 
+	char c[N];
+	char a[N-M+1];
+	
+	printf("请输入字符串：\n");
+	gets(c);
+	
+	printf("请输入要插入的字符串：\n");
+	gets(a);
+	
+	fun(c,a);
+	
+	printf("输出结果：\n");
+	puts(c);
+}
+
+int fun(char c[],char a[])
+{
+	char *p,*q;
+	int i;
+	
+	p = c;
+	q = a;
+
+	for(i = 0;i < (M - 1);i++)//找到位置 
+	{
+		p++;
+	}
+	
+	for(i = 0;i < strlen(a);i++)//开始复制 
+	{
+		*p = *q;
+		p++;
+		q++;
+	}
+}
